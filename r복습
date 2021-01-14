@@ -1,6 +1,16 @@
 1.주의사항
-소문자 대문자 구분
-변수명은 문자로 시작
+ 소문자 대문자 구분
+ 변수명은 문자로 시작
 <- :단축기 Alt+-
 2.벡터 c()
-벡터구간값 추출: var[1:2] ,var[c(1,20)]
+ 벡터구간값 추출: var[1:2] ,var[c(1,20)]
+3.데이터 파악
+class dim head str summary 
+4.행렬연산
+rowSums rowMeans nrow rownames
+mat[1,3] mat["row1", "col3"]  mat[,c("col1","col3")]
+
+5.list
+벡터 데이터 구조들의 집합
+생성하면서 이름지정가능.. list2<-list(numeric=a, character=b, logical=c)
+추출 더블 브라켓!! list[[1]], list[["numeric"]], list$numeric
