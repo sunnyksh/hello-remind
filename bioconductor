@@ -1,0 +1,8 @@
+BiocManager::install("Biobase")
+expressionset
+assaydata유전자 발현 측정값 행은 유전자, 열은 샘플
+phenodata 샘플정보 freature data gene 정보 
+
+ExpressionSet(assayData=assa, 
+              phenoData=AnnotatedDataFrame(phenoData),
+              featuredata=AnnotatedDataFrame(featureData))
