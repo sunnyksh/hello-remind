@@ -1,0 +1,39 @@
+import pandas as pd
+test=pd.read_csv('/../...')
+test.shape
+test.info()
+id=test['id']  아니면 id=test.id  
+##column 이름이 id..따옴표 사용할때 주의할 것
+column 이름에 문장부호나 띄어쓰기가 있으면 [] 사용
+
+age= test[test.age>2]
+## []안에 dataframe 이름도 써줄것.
+
+from matplotlib import pyplot as plt
+plt.plot(test.id, test.age,color='DarkCyan', Linestyle=':', marker='s' )
+plt.legend('left')
+plt.title('')
+plt.ylable('')
+plt.show()
+##문자로된 값에 따옴표 빼먹지 않기 
+
+
+# Add annotation "Missing  data" at (2, 80)
+plt.text(2, 80, 'Missing  data')
+
+##스타일 변경##
+plt.style.use('ggolot')
+print(plt.style.available) #이중에골라서 변경가능
+
+##scatter plot, alpha는 투명도로 진해지는 정도로 Frequency를 알수도 있다. 
+plt.scatter(test.x, test.y,
+           color='red',
+           marker='s',
+           alpha=0.1)
+           
+ plt.bar(test.id, test.
+
+
+
+
+
