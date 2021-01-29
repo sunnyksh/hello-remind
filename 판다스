@@ -1,7 +1,17 @@
 import pandas as pd
 test=pd.read_csv('/../...')
-test.shape
+
 test.info()
+test.head()
+.describe() calculates a few summary statistics for each column.
+test.shape
+
+
+##df세가지 속성 .. shape 처럼 매소드가 아니라 속성이므로 괄호가 필요없음!!!
+test.value
+test.columns
+test.index
+
 id=test['id']  아니면 id=test.id  
 ##column 이름이 id..따옴표 사용할때 주의할 것
 column 이름에 문장부호나 띄어쓰기가 있으면 [] 사용
