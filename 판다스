@@ -1,5 +1,8 @@
 import pandas as pd
+
+#Comma Separated Variables (CSV)
 test=pd.read_csv('/../...')
+df.to_csv('new-csv-file.csv') #dataframe 을 csv 파일로 저장할때
 
 test.info()
 test.head()
@@ -15,6 +18,10 @@ test.index
 id=test['id']  아니면 id=test.id  
 ##column 이름이 id..따옴표 사용할때 주의할 것
 column 이름에 문장부호나 띄어쓰기가 있으면 [] 사용
+
+sam=test.iloc[2]## row 선택시..0부터 index 세번째행 선택하게됨 ㅋ
+
+df.reset_index(drop=True) 
 
 age= test[test.age>2]
 ## []안에 dataframe 이름도 써줄것.
