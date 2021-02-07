@@ -26,7 +26,16 @@ df.reset_index(drop=True)
 age= test[test.age>2]
 ## []안에 dataframe 이름도 써줄것.
 
+df.groupby('column1').column2.measurement()
+where:
+
+column1 is the column that we want to group by ('student' in our example)
+column2 is the column that we want to perform a measurement on (grade in our example)
+measurement is the measurement function we want to apply (mean in our example)
+
 from matplotlib import pyplot as plt
+plt.subplot(2,1,2)
+plt.subplots_adjust(hspace=.., wspace=0.34)  #wspace=horizon 간격, 위아래 간격
 plt.plot(test.id, test.age,color='DarkCyan', Linestyle=':', marker='s' )
 plt.legend('left')
 plt.title('')
