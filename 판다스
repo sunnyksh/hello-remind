@@ -37,11 +37,19 @@ from matplotlib import pyplot as plt
 plt.subplot(2,1,2)
 plt.subplots_adjust(hspace=.., wspace=0.34)  #wspace=horizon 간격, 위아래 간격
 plt.plot(test.id, test.age,color='DarkCyan', Linestyle=':', marker='s' )
-plt.legend('left')
+plt.legend([","], loc=4)
 plt.title('')
 plt.ylable('')
 plt.show()
 ##문자로된 값에 따옴표 빼먹지 않기 
+
+##바차트 여러개 만들때 x값넣는법...
+n = ?  # This is our first dataset (out of 2)
+t = ? # Number of datasets
+d = ? # Number of sets of bars
+w = ? # Width of each bar
+x_values = [t*element + w*n for element
+             in range(d)]
 
 
 # Add annotation "Missing  data" at (2, 80)
