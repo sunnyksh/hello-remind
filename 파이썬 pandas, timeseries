@@ -1,0 +1,65 @@
+# Create the range of dates here, freq디폴트 값은 day임
+##date_reange(start, periods, freq)사용법
+seven_days = pd.date_range(start='2017-1-1', periods=7)
+
+# Iterate over the dates and print the number and name of the weekday
+for day in seven_days:
+    print(day.dayofweek, day.weekday_name)
+
+6 Sunday
+0 Monday
+1 Tuesday
+2 Wednesday
+3 Thursday
+4 Friday
+5 Saturday
+
+
+# Convert the date column to datetime64
+data.date = pd.to_datetime(data.date)
+### data는 df, date는 컬럼명
+
+# Create dataframe prices here--빈df
+prices = pd.DataFrame()
+
+# Select data for each year and concatenate with prices here 
+for year in ['2013', '2014', '2015']:
+    price_per_year = yahoo.loc[year, ['price']].reset_index(drop=True)
+    price_per_year.rename(columns={"price" : year}, inplace=True)
+    prices = pd.concat([prices, price_per_year], axis=1)
+    
+# Set the frequency to calendar daily--비즈니스 데이"B"
+co = co.asfreq('D')
+
+# Plot the data
+co.plot(subplots=True)--subplots=True는 그래프여러개에 각각 표현됨
+plt.show()
+
+# Import data here
+google = pd.read_csv('google.csv', parse_dates=['Date'], index_col='Date')
+# Create 'lagged' and 'shifted'
+google['lagged'] = google.Close.shift(periods=-90)
+google['shifted'] = google.Close.shift(periods=90)
+
+
+
+
+# Created shifted_30 here    ##????df.price?? df['price']항상 브라켓 없이 써도 되는걸까??
+yahoo['shifted_30'] = yahoo.price.shift(30)
+
+# Subtract shifted_30 from price
+yahoo['change_30'] = yahoo.price.sub(yahoo.shifted_30)
+
+# Get the 30-day price difference
+yahoo['diff_30'] = yahoo.price.diff(30)
+
+# Inspect the last five rows of price
+print(yahoo.tail())
+
+# Show the value_counts of the difference between change_30 and diff_30
+print(yahoo.change_30.sub(yahoo.diff_30).value_counts())
+
+
+
+
+
