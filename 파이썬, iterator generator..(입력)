@@ -1,0 +1,7 @@
+# Initialize reader object: df_reader
+df_reader = pd.read_csv('ind_pop.csv', chunksize=10)
+
+# Print two chunks
+print(next(df_reader))
+print(next(df_reader))
+!!!!!!청크사이즈를 넣어서 읽었을때 next사용 가능.. next사용하는것 조금 특이함...ㅋㅋㅋ
