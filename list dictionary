@@ -1,0 +1,17 @@
+딕셔녀리는 {key:value}
+key는 변형 불가.. 일반 숫자, 문자, 튜플()은 key로 가능하지만 list는 변형할수 있어서 불가능...
+
+### 추가할때
+
+lst.append()
+dict['a']="에이"
+
+##제거할때
+
+del dict['b]
+!!!!!!!!!! 엄청 특이함... 마치 sql처럼 점도 안찍고..
+
+
+####키값만, 밸류값만..
+var1=my_dict.keys()
+var2=my_dict.values()
