@@ -1,0 +1,132 @@
+import pandas as pd
+
+#Comma Separated Variables (CSV)
+test=pd.read_csv('/../...')
+df.to_csv('new-csv-file.csv') #dataframe 을 csv 파일로 저장할때
+
+test.info()
+test.head()
+.describe() calculates a few summary statistics for each column.
+test.shape
+
+
+##df세가지 속성 .. shape 처럼 매소드가 아니라 속성이므로 괄호가 필요없음!!!
+test.value
+test.columns
+test.index
+
+##########id=test['id']  아니면 id=test.id  
+##column 이름이 id..따옴표 사용할때 주의할 것
+column 이름에 문장부호나 띄어쓰기가 있으면 [] 사용
+
+######dataframe 정렬하기.
+# 1. col1을 기준으로 오름차순으로 정렬하기.
+sorted_df1 = df.sort_values('col1', ascending = True)
+
+# 2. col2를 기준으로 내림차순으로 정렬하기.
+sorted_df2 = df.sort_values('col2', ascending = False)
+
+# 3. col2를 기준으로 오름차순으로, col1를 기준으로 내림차순으로 정렬하기.
+sorted_df3 = df.sort_values(['col2', 'col1'], ascending=[True, False])
+
+###########
+# 각 컬럼별 데이터 개수
+col_num = df.count(axis=0)
+
+# 각 행별 데이터 개수
+row_num = df.count(axis=1)
+
+# 각 컬럼별 최댓값
+col_max = df.max()
+
+# 각 컬럼별 최솟값
+col_min = df.min()
+
+# 각 컬럼별 합계
+col_sum = df.sum()
+
+# 컬럼의 최솟값으로 NaN값 대체
+math_min = df['math'].min()
+df['math'] = df['math'].fillna(math_min)
+
+#####################
+sam=test.iloc[2]## row 선택시..0부터 index 세번째행 선택하게됨 ㅋ
+
+df.reset_index(drop=True) 
+
+age= test[test.age>2]
+## []안에 dataframe 이름도 써줄것.
+####### 마스킹 연산을 활용하여 출력해보세요! 
+####조건을 넣을때 and or 이라면 괄호와 &,| 기호사용
+print(df[(df["A"]<0.5)&(df["B"]>0.3)])
+# query 함수를 활용하여 출력해보세요!
+print(df.query("A<0.5 and B>0.3"))
+
+
+###########groupby사용할때 
+df.groupby('column1').column2.measurement()
+where:
+
+column1 is the column that we want to group by ('student' in our example)
+column2 is the column that we want to perform a measurement on (grade in our example)
+measurement is the measurement function we want to apply (mean in our example)mean, max etc
+# aggregate를 이용하여 요약 통계량을 산출해봅시다.
+# 데이터 프레임을 'key' 칼럼으로 묶고, data1과 data2 각각의 최솟값, 중앙값, 최댓값을 출력하세요.
+print(df.groupby('key').aggregate([min, np.median, max]))
+df.groupby('key').aggregate(['min', np.median, 'max'])
+
+# 데이터 프레임을 'key' 칼럼으로 묶고, data1의 최솟값, data2의 합계를 출력하세요.
+print(df.groupby('key').aggregate({'data1':min, "data2":sum}))
+
+
+#####$$$$$
+# 예시) 시리즈 데이터를 만드는 방법.
+series = pd.Series([1,2,3,4], index = ['a', 'b', 'c', 'd'], name="Title")
+print(series, "\n")
+## 딕셔녀리가 있다면 매우 간단하게 가능..
+country=pd.Series(dict)
+
+
+
+
+
+
+
+from matplotlib import pyplot as plt
+plt.subplot(2,1,2)
+plt.subplots_adjust(hspace=.., wspace=0.34)  #wspace=horizon 간격, 위아래 간격
+plt.plot(test.id, test.age,color='DarkCyan', Linestyle=':', marker='s' )
+plt.legend([","], loc=4)
+plt.title('')
+plt.ylable('')
+plt.show()
+##문자로된 값에 따옴표 빼먹지 않기 
+
+##바차트 여러개 만들때 x값넣는법...
+n = ?  # This is our first dataset (out of 2)
+t = ? # Number of datasets
+d = ? # Number of sets of bars
+w = ? # Width of each bar
+x_values = [t*element + w*n for element
+             in range(d)]
+
+
+# Add annotation "Missing  data" at (2, 80)
+plt.text(2, 80, 'Missing  data')
+
+##스타일 변경##
+plt.style.use('ggolot')
+print(plt.style.available) #이중에골라서 변경가능
+
+##scatter plot, alpha는 투명도로 진해지는 정도로 Frequency를 알수도 있다. 
+plt.scatter(test.x, test.y,
+           color='red',
+           marker='s',
+           alpha=0.1)
+           
+ plt.bar(test.id, test.
+
+
+
+
+
